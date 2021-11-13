@@ -1,0 +1,39 @@
+/* Sources background : https://www.newsweek.com/my-hero-academia-season-5-episode-1-how-watch-online-time-1578448  */
+
+body{
+    background-image: url(../Images/Background_Login.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family : heroes;
+}
+
+form{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    width: 400px;
+    border-style: solid;
+    border-width: medium;
+    border-color: rgba(250,219,74,0.8);
+    border-radius: 5px;
+    background-color: rgba(235,50,35,.8);
+    font-size:larger;
+}
+
+form > input, label{
+    width: 60%;
+    margin: 5% 10% 5% 18%;
+    padding-top: 2%;
+}
+form > button {
+    margin-left: 30%;
+    margin-bottom: 5%;
+    width: 30%;
+}
+form > input, button{
+    border-radius: 20px;
+}
+
+form > label{
+    margin-left: 35%;
+}

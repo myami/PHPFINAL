@@ -1,0 +1,6 @@
+/* font sources : https://www.dafont.com/fr/heroes.font  */
+
+@font-face {
+    font-family: heroes;
+    src: url(../Font/HEROES.ttf);
+  }
