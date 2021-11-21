@@ -23,7 +23,7 @@ abstract class CommonAction
     
         if ($this->visibility > CommonAction::$VISIBILITY_PUBLIC) {
             if (!isset($_SESSION["visibility"]) || $_SESSION["visibility"] < $this->visibility) {
-                header("location:login.php");
+                header("location:index.php");
                 exit;
             }
         }

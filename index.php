@@ -16,4 +16,11 @@ require_once("Partial/header.php");
     <label for="fname">Password : </label>
     <input type="password" name="Password" id="pwd">
     <button>Connexion</button>
+    <?php 
+			if ($data["hasConnectionError"]) {
+				?>
+				<div class="error-div"><strong>Erreur : </strong>Connexion erronée</div>
+				<?php
+			}
+		?>
 </form>

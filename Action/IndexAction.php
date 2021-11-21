@@ -10,6 +10,30 @@ class IndexAction extends CommonAction
     }
 
     protected function executeAction() {
-        return [];
+        $hasConnectionError = false;
+    if (isset($_POST["Username"])) 
+    {
+        $data = [];
+        $data["username"] = $_POST["Username"];
+        $data["password"] = $_POST["Password"];
+        $result = parent::callAPI("signin", $data);
+
+        if ($result == "INVALID_USERNAME_PASSWORD") {
+            // err
+            $hasConnectionError = true;
+        }
+        else {
+            // Pour voir les informations retournées : var_dump($result);exit;
+            $key = $result->key;
+            $_SESSION["key"] = key;
+           
+            header("location:lobby.php");
+            exit;
+
+        }
+    }
+
+
+        return compact("hasConnectionError");
     }
 }
