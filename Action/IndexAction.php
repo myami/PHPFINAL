@@ -25,7 +25,7 @@ class IndexAction extends CommonAction
         else {
             // Pour voir les informations retournées : var_dump($result);exit;
             $key = $result->key;
-            $_SESSION["key"] = key;
+            $_SESSION["key"] = $key;
            
             header("location:lobby.php");
             exit;

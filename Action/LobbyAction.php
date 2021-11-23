@@ -10,7 +10,7 @@ class LobbyAction extends CommonAction
     }
 
     protected function executeAction() {
-        var_dump($_SESSION["key"]);
+
         return [];
 
     }

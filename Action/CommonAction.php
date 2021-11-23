@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 abstract class CommonAction
 {
     protected static $VISIBILITY_ADMIN = 3;
@@ -8,12 +8,14 @@ abstract class CommonAction
     protected static $VISIBILITY_PUBLIC = 0;
     
     private $visibility = null;
+    
 
     public function __construct($visibility) {
         $this->visibility = $visibility;
     }
     
     public function execute() {
+        
         if (isset($_GET["action"])) {
             if ($_GET["action"] === "logout") {
                 session_unset();

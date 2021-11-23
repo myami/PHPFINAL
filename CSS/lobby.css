@@ -19,8 +19,6 @@ body{
     height: 100%;
     position: absolute;
     display: flex;
-
-
 }
 
 
@@ -61,15 +59,24 @@ body{
     background-size: 100% 100%; 
     background-position: center; /* Center the image */
 }
+
+#notes_container{
+    background-image: url(../Images/Note.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%; 
+    background-position: center; /* Center the image */
+}
 h1{
     text-align: center;
     vertical-align: middle;
 }
-
+.item_menu > * {
+    font-size: 20px;
+}
 button:hover {
     color: rgb(52, 54, 182);
     box-shadow: 0 20px 30px 0 rgba(0,0,0,0.24), 0 30px 50px 0 rgba(0,0,0,0.19); /* https://www.w3schools.com/css/css3_buttons.asp shaddow css */
-  }
+}
 button:active {
     color: rgb(255, 0, 0);
 }

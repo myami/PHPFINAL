@@ -10,6 +10,11 @@ class JeuAction extends CommonAction
     }
 
     protected function executeAction() {
+        $Player_State = false;
+        
+
         return [];
     }
 }
+
+
