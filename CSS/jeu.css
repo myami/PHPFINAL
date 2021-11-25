@@ -110,6 +110,12 @@ https://static.wikia.nocookie.net/bokunoheroacademia/images/6/61/Festival_deport
     background-size: 100% 100%;
     width: 50%;
     height: 100%;
+    font-weight: bold;
+    font-size: 3rem;
+    color: rgb(0, 255, 255);
+    display: flex;
+    justify-content: center;
+
   }
 
   .nbpioche{
@@ -173,9 +179,11 @@ https://static.wikia.nocookie.net/bokunoheroacademia/images/6/61/Festival_deport
     width: 35%;
     height: 50%;
   }
-  #energiePlayer{
-
-  }
+.top-right > div , .bottom-right > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
   .VieB{
     background-image: url("../Images/Heart.png");
