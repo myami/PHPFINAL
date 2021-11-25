@@ -1,2 +1,187 @@
 /*  https://myheroacademia.fandom.com/wiki/List_of_Characters https://myheroacademia.fandom.com/wiki/My_Hero_Academia:_Tag_Card_Game
+https://wall.alphacoders.com/by_sub_category.php?id=240912&name=My+Hero+Academia+Wallpapers
+https://www.seekpng.com/png/detail/392-3927232_sphere-icon-sphere-icon-png.png
+https://secrethouseofanime.files.wordpress.com/2020/03/gem.jpg?w=640
+https://static.wikia.nocookie.net/bokunoheroacademia/images/6/61/Festival_deportivo_de_la_U.A..png/revision/latest?cb=20210621173310&path-prefix=es
  */
+
+ body{
+    background-image: url(../Images/backgroundgame.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family : heroes;
+    display: inline-block;
+ }
+
+ .container {
+   position: absolute;
+   width: 98%;
+   height: 98%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "top-left Card-Left-enemie Hero-enemie Card-Right-enemie top-right"
+      "Button-right Board-enemie Board-enemie Board-enemie Button-left"
+      "Button-right Board-me Board-me Board-me Button-left"
+      "Bottom-left Card-left Hero-me Card-right bottom-right";
+
+  }
+  
+  .Hero-enemie { grid-area: Hero-enemie; border-style: solid; }
+  
+  .Hero-me { grid-area: Hero-me;border-style: solid; }
+  
+  .Card-left { 
+      grid-area: Card-left; 
+      border-style: solid;
+      display: flex;
+    }
+  
+  .Card-right { grid-area: Card-right;border-style: solid;display: flex; }
+  
+  .Card-Left-enemie { grid-area: Card-Left-enemie;border-style: solid;display: flex; }
+  
+  .Card-Right-enemie { grid-area: Card-Right-enemie; border-style: solid; display: flex;}
+  
+  .Board-enemie { grid-area: Board-enemie; border-style: solid; display: flex;}
+  
+  .Board-me { grid-area: Board-me;border-style: solid; display: flex; }
+  
+  .Button-left { grid-area: Button-left;border-style: solid; }
+  
+  .Button-right { grid-area: Button-right;border-style: solid; }
+  
+  .Bottom-left { grid-area: Bottom-left; border-style: solid;display: flex;}
+  
+  .bottom-right { grid-area: bottom-right; border-style: solid; display: flex;}
+  
+  .top-right { grid-area: top-right; border-style: solid; display: flex;}
+  
+  .top-left { grid-area: top-left; border-style: solid; }
+  
+
+  #timer_area{
+      width: 30%;
+      height: 10%;
+      background-color: rgba(84, 113, 134, 0.8);
+      border-style: solid; 
+      border-color: rgb(78, 78, 78);
+      text-align: center;
+
+
+  }
+  #timer_area > span {
+    padding-top: 10%;
+  }
+
+  .Card{
+      background-image: url("../Images/FrontCard.png");
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      width: 20%;
+      height: 60%;
+      border-radius: 5%;
+  }
+
+  
+.Card:hover {
+    transform: scale(2.2); 
+  }
+
+  .Cardboard{
+    background-image: url("../Images/FrontCard.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 10%;
+    height: 60%;
+    border-radius: 5%;
+  }
+
+.Cardboard:hover {
+    transform: scale(2.2); 
+  }
+
+  .pioche{
+    background-image: url("../Images/BackCard.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 50%;
+    height: 100%;
+  }
+
+  .nbpioche{
+      text-align: center;
+      vertical-align: middle;
+
+  }
+  .Power{
+      margin-top: 20%;
+      margin-left: 15%;
+  }
+
+  .Hero{
+    background-image: url("../Images/FrontCardHero.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 50%;
+    height: 100%;
+    margin-left: 20%;
+    border-radius: 5%;
+  }
+  .Hero:hover {
+    transform: scale(1.2); 
+
+  }
+
+
+  .CartEnemie{
+    background-image: url("../Images/BackCard.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 20%;
+    height: 60%;
+  }
+
+  #SelectedHero{
+
+    background-image: url("../Images/heroes/All_Might_Anime_Portrait.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 80%;
+    height: 50%;
+    margin-left: 5%;
+    border-radius: 30px;
+  }
+
+  #EnemieHero{
+    background-image: url("../Images/heroes/All_For_One_Anime_Portrait.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 80%;
+    height: 50%;
+    margin-left: 5%;
+    border-radius: 30px;
+  }
+
+  .EnergieB{
+    background-image: url("../Images/Energie.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 35%;
+    height: 50%;
+  }
+  #energiePlayer{
+
+  }
+
+  .VieB{
+    background-image: url("../Images/Heart.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 30%;
+    height: 50%;
+    margin-left: 10%;
+  }

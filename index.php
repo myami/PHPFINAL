@@ -24,3 +24,6 @@ require_once("Partial/header.php");
 			}
 		?>
 </form>
+
+<?php
+	require_once("partial/footer.php");

@@ -1,9 +1,11 @@
-/* Sources background : https://www.newsweek.com/my-hero-academia-season-5-episode-1-how-watch-online-time-1578448  */
+/* Sources background : https://wall.alphacoders.com/by_sub_category.php?id=240912&name=My+Hero+Academia+Wallpapers */
 
 body{
     background-image: url(../Images/Background_Login.png);
     background-repeat: no-repeat;
     background-size: cover;
+
+
     font-family : heroes;
 }
 
@@ -26,7 +28,7 @@ form > input, label{
     padding-top: 2%;
 }
 form > button {
-    margin-left: 30%;
+    margin-left: 33%;
     margin-bottom: 5%;
     width: 30%;
 }

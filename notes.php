@@ -7,3 +7,7 @@ $page_title="Notes";
 
 require_once("Partial/header.php");
 ?>
+
+
+<?php
+	require_once("partial/footer.php");

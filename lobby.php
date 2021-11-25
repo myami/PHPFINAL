@@ -37,3 +37,7 @@ require_once("Partial/header.php");
     </div>
 
 </div>
+
+
+<?php
+	require_once("partial/footer.php");
