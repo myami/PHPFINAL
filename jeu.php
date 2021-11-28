@@ -10,6 +10,7 @@ require_once("Partial/header.php");
 
 
 <link rel="stylesheet" href="./CSS/jeu.css">
+<script src="./JS/jeu.js"></script>
 
 <div class="container">
   <div class="Hero-enemie">
@@ -22,113 +23,36 @@ require_once("Partial/header.php");
 
   <div class = "Hero">
     <div id = "SelectedHero"></div>
-    <div class = "Power">
-        5/10 POWER
-    </div>
+
   </div>
 
   </div>
-  <div class="Card-left">
-    <div class = "Card">
+  <div class="Card-left" id = "player-left">
 
-    <span class = "Vie"> 5 </span>
-    <span class = "Name"> name</span>
-    <span class = "Description">desctiption</span>
     </div>
-    <div class = "Card">
-
-    <span class = "Vie"> 5 </span>
-    <span class = "Name"> name</span>
-    <span class = "Description">desctiption</span>
-    </div>
-    <div class = "Card">
-
-    <span class = "Vie"> 5 </span>
-    <span class = "Name"> name</span>
-    <span class = "Description">desctiption</span>
-    </div>
-    <div class = "Card">
-
-    <span class = "Vie"> 5 </span>
-    <span class = "Name"> name</span>
-    <span class = "Description">desctiption</span>
-    </div>
-    <div class = "Card">
-
-    <span class = "Vie"> 5 </span>
-    <span class = "Name"> name</span>
-    <span class = "Description">desctiption</span>
-    </div>
-    </div>
-    <div class="Card-right">
-    <div class = "Card">
-
-    <span class = "Vie"> 5 </span>
-    <span class = "Name"> name</span>
-    <span class = "Description">desctiption</span>
-    </div>
-    <div class = "Card">
-
-    <span class = "Vie"> 5 </span>
-    <span class = "Name"> name</span>
-    <span class = "Description">desctiption</span>
-    </div>
-    <div class = "Card">
-
-    <span class = "Vie"> 5 </span>
-    <span class = "Name"> name</span>
-    <span class = "Description">desctiption</span>
-    </div>
-    <div class = "Card">
-
-    <span class = "Vie"> 5 </span>
-    <span class = "Name"> name</span>
-    <span class = "Description">desctiption</span>
-    </div>
-    <div class = "Card">
-
-    <span class = "Vie"> 5 </span>
-    <span class = "Name"> name</span>
-    <span class = "Description">desctiption</span>
-</div>
+  <div class="Card-right" id = "player-right">
 
   </div>
-  <div class="Card-Left-enemie">
-    <div class = "CartEnemie"></div>
-    <div class = "CartEnemie"></div>
-    <div class = "CartEnemie"></div>
-    <div class = "CartEnemie"></div>
-    <div class = "CartEnemie"></div>
-  </div>
-  <div class="Card-Right-enemie">
-    <div class = "CartEnemie"></div>
-    <div class = "CartEnemie"></div>
-    <div class = "CartEnemie"></div>
-    <div class = "CartEnemie"></div>
-    <div class = "CartEnemie"></div>
+  <div class="Card-Left-enemie" id ="opponent-left">
 
   </div>
-  <div class="Board-enemie">
-    <div class = "Cardboard">
-    <span class = "Vie"> 5 </span>
-    <span class = "Name"> name</span>
-    <span class = "Description">desctiption</span>
-    </div>
+  <div class="Card-Right-enemie"id = "opponent-right">
+
 
   </div>
-  <div class="Board-me">
-    <div class = "Cardboard">
-    <span class = "Vie"> 5 </span>
-    <span class = "Name"> name</span>
-    <span class = "Description">desctiption</span>
-    </div>
+  <div class="Board-enemie" id= "board-enemie">
+  
+
+  </div>
+  <div class="Board-me"id = "board-player">
+    
   </div>
   <div class="Button-left">
     <div id = timer_area>
-        <span>50 seconds</span>
+        <span id = "timer">... seconds</span>
     </div>
-    <button>Next turn</button>
-    <button>Active power</button>
+    <button id = "Turn">Next turn</button>
+    <button id = "hpower">Active power</button>
     
   </div>
   <div class="Button-right">

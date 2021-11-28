@@ -11,6 +11,10 @@ https://static.wikia.nocookie.net/bokunoheroacademia/images/6/61/Festival_deport
     background-size: cover;
     font-family : heroes;
     display: inline-block;
+    
+ }
+ *{
+  color: white;
  }
 
  .container {
@@ -112,7 +116,6 @@ https://static.wikia.nocookie.net/bokunoheroacademia/images/6/61/Festival_deport
     height: 100%;
     font-weight: bold;
     font-size: 3rem;
-    color: rgb(0, 255, 255);
     display: flex;
     justify-content: center;
 

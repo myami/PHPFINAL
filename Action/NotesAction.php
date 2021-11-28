@@ -10,6 +10,19 @@ class NotesAction extends CommonAction
     }
 
     protected function executeAction() {
-        return [];
+        if (isset($_POST["text"])) {
+			$post = array();
+			$post["text"] = $_POST["text"];
+			$_SESSION["posts"][] = $post;
+		}
+			
+		if (!isset($_SESSION["posts"])) {
+			$_SESSION["posts"] = array();
+		}
+		
+		$memos = $_SESSION["posts"];
+		
+		return compact("memos");
+        
     }
 }
