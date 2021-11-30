@@ -14,17 +14,17 @@ require_once("Partial/header.php");
 <div id = "menu">
     <div id= "menu_container" >
         
-        <button type="button" id = "training_container" class = "item_menu" onclick="lobby('training')">
+        <button type="button" id = "training_container" class = "item_menu" >
             <h1>Training</h1>
         </button>
 
-        <button type="button" id = "play_container" class = "item_menu"onclick="lobby('jouer')">
+        <button type="button" id = "play_container" class = "item_menu">
             <h1>Play</h1>
         </button>
-        <button type="button" id = "notes_container" class = "item_menu" onclick="lobby('note')">
+        <button type="button" id = "notes_container" class = "item_menu">
             <h1>Notes</h1>
         </button>
-        <button type="button" id = "leave_container" class = "item_menu"onclick="lobby('quitter')">
+        <button type="button" id = "leave_container" class = "item_menu">
             <h1>Leave</h1>
         </button>
 

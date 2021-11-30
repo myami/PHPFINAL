@@ -41,14 +41,36 @@ const lobby = (gametype) => {
 	})
 }
 
+window.addEventListener("load", () => {
+	document.querySelector("#training_container").addEventListener("click", training);
+	document.querySelector("#play_container").addEventListener("click", jouer);
+	document.querySelector("#notes_container").addEventListener("click", notes);
+	document.querySelector("#leave_container").addEventListener("click", quitter);
 
+
+	
+});
+
+
+function training(){
+	lobby("training");
+}	
+function jouer(){
+	lobby("jouer");
+}
+function notes(){
+	window.location.href = "./notes.php";
+}
+function quitter(){
+	lobby("quitter");
+}
 
 function signout(){
 	window.location.href = "./index.php";
 }
 
 function launchGame(){
-	console.log("patate");
+
 	window.location.href = "./jeu.php";
 }
 

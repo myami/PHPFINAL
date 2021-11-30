@@ -1,5 +1,6 @@
 <?php
 	require_once("action/CommonAction.php");
+    require_once("action/DAO/ContentDAO.php");
     
 class IndexAction extends CommonAction
 {
@@ -23,10 +24,9 @@ class IndexAction extends CommonAction
             $hasConnectionError = true;
         }
         else {
-            // Pour voir les informations retournées : var_dump($result);exit;
             $key = $result->key;
             $_SESSION["key"] = $key;
-           
+            ContentDAO::setIndexText($data["username"]);
             header("location:lobby.php");
             exit;
 

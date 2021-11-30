@@ -15,7 +15,7 @@ class JeuButtonAjaxAction extends CommonAction
        $data["key"] = $_SESSION["key"];
 
      
-       switch($_POST["type"])
+       switch($_POST["typebutton"])
        {
            case "end":
                 $data["type"] = "END_TURN";

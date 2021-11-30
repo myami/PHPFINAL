@@ -15,7 +15,7 @@ require_once("Partial/header.php");
 <div class="container">
   <div class="Hero-enemie">
   <div class = "Hero">
-    <div id = "EnemieHero"></div>
+    <div id = "EnemieHero"> <span class = "uid">0</span></div>
   </div>
 
   </div>
@@ -53,11 +53,14 @@ require_once("Partial/header.php");
     </div>
     <button id = "Turn">Next turn</button>
     <button id = "hpower">Active power</button>
+    <button id = "giveup">Give up</button>
     
   </div>
   <div class="Button-right">
-    <button>Give up</button>
-    <button>Chat</button>
+    
+    <iframe style="width:700px;height:240px;" onload="applyStyles(this)"  
+        src="https://magix.apps-de-cours.com/server/#/chat/<?php echo $_SESSION["key"] ?>">
+    </iframe>
   </div>
   <div class="Bottom-left">
       <div class = "pioche">

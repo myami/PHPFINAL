@@ -1,3 +1,16 @@
+const applyStyles = iframe => {
+	let styles = {
+		fontColor : "#000000",
+		backgroundColor : "rgba(128, 128, 128, 0.9)"
+
+	}
+	
+	setTimeout(() => {
+		iframe.contentWindow.postMessage(JSON.stringify(styles), "*");	
+}, 100);
+}
+
+
 const state = () => {
     fetch("JeuAjax.php", {   // Il faut créer cette page et son contrôleur appelle 
     method : "POST",       // l’API (games/state)
@@ -11,10 +24,26 @@ const state = () => {
         if (data == "GAME_NOT_FOUND") 
         {
                 // Fin de la partie. Est-ce que j’ai gagné? Je dois appeler user-info
+                alert("Probleme avec la partie, retour au lobby");
+                setTimeout(function(){window.location.href = "./lobby.php";},2000);
+
         }
         if (data == "WAITING")
         {
             alert("En attente de joueur");
+        }
+        if (data == "LAST_GAME_LOST")
+        {
+            // surrender
+            alert("Tu a perdu la partie");
+            setTimeout(function(){window.location.href = "./lobby.php";},2000);
+
+
+        }
+        if (data == "LAST_GAME_WON")
+        {
+            alert("tu a gagner la partie!!!");
+            setTimeout(function(){window.location.href = "./lobby.php";},2000);
         }
            
     }
@@ -29,13 +58,35 @@ const state = () => {
 
 window.addEventListener("load", () => {
 setTimeout(state, 1000); // Appel initial (attendre 1 seconde)
+document.querySelector("#Turn").addEventListener("click", turn);
+document.querySelector("#hpower").addEventListener("click", power);
+document.querySelector("#giveup").addEventListener("click", giveup);
+document.querySelector("#chat").addEventListener("click", chat);
+
+
+document.querySelector("#EnemieHero").addEventListener("click", attack);
 
 
 });
 
+function turn(){
+    button("end");
+}
+function power(){
+    button("hero");
+}
+function giveup(){
+    button("surrender");
+}
+
+function chat (){
+    // fait apparaitre et disparaitre le chat
+}
+
 const button = (type) => {
     let formData = new FormData();
 	formData.append("typebutton", type);
+    console.log(type);
     fetch("JeuButtonAjax.php", {   // Il faut créer cette page et son contrôleur appelle 
  
     method : "POST",       // l’API (games/state)
@@ -58,7 +109,7 @@ const button = (type) => {
     })
 }
 
-const carte = (type,id,idtarget) => {
+const carte = (type,id,idtarget = null) => {
     // idtarget a null si play
     let formData = new FormData();
 	formData.append("typecarte", type);
@@ -73,16 +124,6 @@ const carte = (type,id,idtarget) => {
 .then(response => response.json())
 .then(data => {
     console.log(data);
-    if (typeof data !== "object")
-    {
-       
-           
-    }
-    else 
-    {
-       
-    }
-
     })
 }
 
@@ -142,7 +183,7 @@ function UpdateBoardPlayer(data){
     }
     for(let i =0; i < data["board"].length;i++)
     {
-        boardplayer.appendChild(AddCard(data["board"][i]));
+        boardplayer.appendChild(AddCartBoardPlayer(data["board"][i]));
     }
 
 
@@ -155,7 +196,7 @@ function UpdateBoardEnemie(data){
     }
     for(let i =0; i < data["opponent"]["board"].length;i++)
     {
-        boardenemie.appendChild(AddCard(data["opponent"]["board"][i]));
+        boardenemie.appendChild(AddCartBoardEnemie(data["opponent"]["board"][i]));
     }
 
 }
@@ -201,21 +242,28 @@ function UpdateCardPlayer(data){
 
     
 
-    if(data["opponent"]["handSize"] <= 5){
-        
-        for (let i = 0; i <data["opponent"]["handSize"];i++ ){
+    if(data["hand"].length <= 5){
+        for (let i = 0; i <data["hand"].length;i++ ){
             
-            leftplayer.appendChild(AddCard(data["hand"][i]));
+            leftplayer.appendChild(addplayerhandcart(data["hand"][i]));
         }
     }
     else{
+
         for (let i = 0; i < 5;i++ ){
-            leftplayer.appendChild(AddCard(data["hand"][i]));
+            leftplayer.appendChild(addplayerhandcart(data["hand"][i]));
         }
-        for (let i = 5; i < data["opponent"]["handSize"];i++ ){
-            rightplayer.appendChild(AddCard(data["hand"][i]));
+        for (let i = 5; i < data["hand"].length;i++ ){
+            rightplayer.appendChild(addplayerhandcart(data["hand"][i]));
+            console.log(data["hand"][i]);
         }
     }
+}
+
+function addplayerhandcart(data){
+ let card = AddCard(data);
+ card.addEventListener("click", play);
+ return card;
 }
 
 
@@ -230,17 +278,50 @@ function AddCard(data){
     atk.textContent = data["atk"];
     var mechanic = document.createElement("span");
     mechanic.textContent = data["mechanics"];
+    var uid = document.createElement("span");
+    uid.textContent = data["uid"];
+    uid.classList.add("uid");
 
     carte.appendChild(vie);
     carte.appendChild(cost);
     carte.appendChild(atk);
     carte.appendChild(mechanic);
-
-    if (data["state"] != null)
-    {
-        // sleep ou pas
-    }
-  
+    carte.appendChild(uid);
 
     return carte;
+}
+
+let attaquant;
+
+function AddCartBoardPlayer(data){
+    let card = AddCard(data);
+    card.addEventListener("click", addatackant);
+    return card;
+}
+
+function AddCartBoardEnemie(data){
+    let card = AddCard(data);
+    card.addEventListener("click", attack);
+    return card;
+}
+
+
+function play(){
+let target = event.currentTarget;
+console.log(target.querySelector(".uid").textContent);
+carte("play",target.querySelector(".uid").textContent);
+}
+
+function addatackant(){
+    let target = event.currentTarget;
+    attaquant = target.querySelector(".uid").textContent;
+
+}
+
+function attack(){
+    let target = event.currentTarget;
+    if (attaquant != null ){
+        carte("attack",attaquant,target.querySelector(".uid").textContent);
+    }
+
 }
