@@ -1,82 +1,93 @@
 /* https://shonenspiritcom.files.wordpress.com/2018/06/deku-training.jpg?w=500&h=276  https://media.comicbook.com/2019/06/my-hero-academia-fight-1176573.jpeg?auto=webp&width=696&height=391&crop=696:391,smart  https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/10/Iida-My-Hero-Academia-5.jpg?q=50&fit=crop&w=740&h=370&dpr=1.5
 https://external-preview.redd.it/uTIFxQXDrg0jgIP4_aQCMBTA9VDMRBlQ5tVlxuuSKfw.png?auto=webp&s=4a4ab392b299fd3aba50fb77a9aaebd8992c2dd1
-*/ 
+*/
 
-body{
+body {
     background-image: url(../Images/background_lobby.png);
     background-repeat: no-repeat;
     background-size: cover;
-    font-family : heroes;
+    font-family: heroes;
 }
 
-#menu{
+#menu {
     display: flex;
     flex-direction: column;
-    margin-top: 5%;
+    margin-top: 2%;
 }
-#menu_container{
+#menu_container {
     width: 98%;
     height: 100%;
     position: absolute;
     display: flex;
 }
 
-
-
-#menu_chat{
+#menu_chat {
     position: absolute;
     top: 70%;
     left: 30%;
     height: 40%;
 }
 
-.item_menu{
+.item_menu {
     width: 30%;
     height: 60%;
     margin-left: 2%;
     border-color: rgba(0, 0, 0, 0.8);
     border-radius: 5px;
     border-style: solid;
-    border-width:thick;
+    border-width: thick;
 }
 
-#training_container{
+#training_container {
     background-image: url(../Images/training.jpg);
     background-repeat: no-repeat;
-    background-size: 100% 100%; 
+    background-size: 100% 100%;
     background-position: center; /* Center the image */
 }
 
-#play_container{
+#play_container {
     background-image: url(../Images/fight.jpeg);
     background-repeat: no-repeat;
-    background-size: 100% 100%; 
+    background-size: 100% 100%;
     background-position: center; /* Center the image */
 }
-#leave_container{
+#leave_container {
     background-image: url(../Images/leave.jpg);
     background-repeat: no-repeat;
-    background-size: 100% 100%; 
+    background-size: 100% 100%;
     background-position: center; /* Center the image */
 }
 
-#notes_container{
+#notes_container {
     background-image: url(../Images/Note.jpg);
     background-repeat: no-repeat;
-    background-size: 100% 100%; 
+    background-size: 100% 100%;
     background-position: center; /* Center the image */
 }
-h1{
+h1 {
     text-align: center;
     vertical-align: middle;
 }
 .item_menu > * {
     font-size: 20px;
 }
+
 button:hover {
-    color: rgb(52, 54, 182);
-    box-shadow: 0 20px 30px 0 rgba(0,0,0,0.24), 0 30px 50px 0 rgba(0,0,0,0.19); /* https://www.w3schools.com/css/css3_buttons.asp shaddow css */
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 5px rgb(255, 255, 255), 0 0 10px rgb(255, 255, 255), 0 0 40px rgb(255, 255, 255),
+        0 0 20px rgb(255, 255, 255);
 }
+
+button:hover > h1 {
+    font-size: 3rem !important;
+}
+
+h1 {
+    font-size: 2rem !important;
+    text-shadow: -2px -2px 0px rgb(255, 255, 255), 2px -2px 0 rgb(255, 255, 255),
+        -2px 2px 0 rgb(255, 255, 255), 2px 2px 0 rgb(255, 255, 255);
+}
+
 button:active {
     color: rgb(255, 0, 0);
 }

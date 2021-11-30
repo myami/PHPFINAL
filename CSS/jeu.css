@@ -5,110 +5,231 @@ https://secrethouseofanime.files.wordpress.com/2020/03/gem.jpg?w=640
 https://static.wikia.nocookie.net/bokunoheroacademia/images/6/61/Festival_deportivo_de_la_U.A..png/revision/latest?cb=20210621173310&path-prefix=es
  */
 
- body{
+body {
     background-image: url(../Images/backgroundgame.png);
     background-repeat: no-repeat;
     background-size: cover;
-    font-family : heroes;
+    font-family: heroes;
     display: inline-block;
-    
- }
- *{
-  color: white;
- }
+}
+* {
+    color: white;
+}
 
- .container {
-   position: absolute;
-   width: 98%;
-   height: 98%;
+.container {
+    position: absolute;
+    width: 98%;
+    height: 98%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 17vw 28vw 11vw 32vw 13vw;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
-      "top-left Card-Left-enemie Hero-enemie Card-Right-enemie top-right"
-      "Button-right Board-enemie Board-enemie Board-enemie Button-left"
-      "Button-right Board-me Board-me Board-me Button-left"
-      "Bottom-left Card-left Hero-me Card-right bottom-right";
+        "top-left Card-Left-enemie Hero-enemie Card-Right-enemie top-right"
+        "Button-right Board-enemie Board-enemie Board-enemie Button-left"
+        "Button-right Board-me Board-me Board-me Button-left"
+        "Bottom-left Card-left Hero-me Card-right bottom-right";
+}
 
-  }
-  
-  .Hero-enemie { grid-area: Hero-enemie; border-style: solid; }
-  
-  .Hero-me { grid-area: Hero-me;border-style: solid; }
-  
-  .Card-left { 
-      grid-area: Card-left; 
-      border-style: solid;
-      display: flex;
-    }
-  
-  .Card-right { grid-area: Card-right;border-style: solid;display: flex; }
-  
-  .Card-Left-enemie { grid-area: Card-Left-enemie;border-style: solid;display: flex; }
-  
-  .Card-Right-enemie { grid-area: Card-Right-enemie; border-style: solid; display: flex;}
-  
-  .Board-enemie { grid-area: Board-enemie; border-style: solid; display: flex;}
-  
-  .Board-me { grid-area: Board-me;border-style: solid; display: flex; }
-  
-  .Button-left { grid-area: Button-left;border-style: solid; }
-  
-  .Button-right { grid-area: Button-right;border-style: solid; }
-  
-  .Bottom-left { grid-area: Bottom-left; border-style: solid;display: flex;}
-  
-  .bottom-right { grid-area: bottom-right; border-style: solid; display: flex;}
-  
-  .top-right { grid-area: top-right; border-style: solid; display: flex;}
-  
-  .top-left { grid-area: top-left; border-style: solid; }
-  
+.container > div {
+    width: 100%;
+    height: auto;
+}
 
-  #timer_area{
-      width: 30%;
-      height: 10%;
-      background-color: rgba(84, 113, 134, 0.8);
-      border-style: solid; 
-      border-color: rgb(78, 78, 78);
-      text-align: center;
+.Hero-enemie {
+    grid-area: Hero-enemie;
+}
 
+.Hero-enemie > .Hero {
+    margin-top: 10%;
+}
 
-  }
-  #timer_area > span {
+.Hero-me {
+    grid-area: Hero-me;
+}
+
+.Card-left {
+    grid-area: Card-left;
+    display: flex;
+}
+
+.Card-right {
+    grid-area: Card-right;
+    display: flex;
+}
+
+.Card-Left-enemie {
+    grid-area: Card-Left-enemie;
+    display: flex;
+}
+
+.Card-Right-enemie {
+    grid-area: Card-Right-enemie;
+    display: flex;
+}
+
+.Board-enemie {
+    grid-area: Board-enemie;
+    display: flex;
+}
+
+.Board-me {
+    grid-area: Board-me;
+    display: flex;
+    border-top: black dashed 8px;
+}
+
+.Button-left {
+    grid-area: Button-left;
+}
+
+.Button-right {
+    grid-area: Button-right;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-right: white solid 1px;
+}
+
+.Bottom-left {
+    grid-area: Bottom-left;
+    display: flex;
+}
+
+.bottom-right {
+    grid-area: bottom-right;
+    display: flex;
+}
+
+.top-right {
+    grid-area: top-right;
+    display: flex;
+}
+
+.top-left {
+    grid-area: top-left;
+}
+
+.top-right,
+.Button-left,
+.bottom-right {
+    width: 95% !important;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-left: white solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.top-right {
+    border-radius: 5% 0px 0px 0px;
+    border-bottom: dashed 1px white;
+}
+.bottom-right {
+    border-radius: 0px 0% 0% 5%;
+    border-top: dashed 1px white;
+}
+
+.Button-left {
+    flex-direction: column;
+}
+
+.Button-left > * {
+    margin: 4% 0px;
+}
+
+.Button-left > button {
+    color: black;
+    border: 2px solid black;
+    border-radius: 20% 0% 20% 0%;
+    font-family: heroes;
+    width: 70%;
+    height: 8%;
+}
+
+span {
+    text-shadow: -2px -2px 0px rgb(0, 0, 0), 2px -2px 0 rgb(0, 0, 0), -2px 2px 0 rgb(0, 0, 0),
+        2px 2px 0 rgb(0, 0, 0);
+}
+
+#timer_area {
+    height: 10%;
+    background-color: rgba(84, 113, 134, 0.8);
+    border-style: solid;
+    border-color: rgb(78, 78, 78);
+    text-align: center;
+    border-radius: 20%;
+    padding: 2%;
+}
+#timer_area > span {
     padding-top: 10%;
-  }
+}
 
-  .Card{
-      background-image: url("../Images/FrontCard.png");
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      width: 20%;
-      height: 60%;
-      border-radius: 5%;
-  }
+.Card {
+    background-image: url("../Images/heroes/Eraser_Head_Anime_Portrait.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 20%;
+    height: 60%;
+    border-radius: 5%;
+    border: 1px black solid;
+    box-shadow: 0 0 3px rgb(0, 0, 0);
 
-  
+    display: flex;
+    flex-direction: column;
+}
+
+.Card > div {
+    display: flex;
+    justify-content: space-between;
+    height: 20%;
+}
+
+.Card > div > div {
+    display: flex;
+    justify-content: end;
+}
+
+.Card > div > div > span {
+    border: solid 2px black;
+    aspect-ratio: 1/1;
+    text-shadow: none !important;
+    text-align: center;
+}
+
+.Card > span {
+    height: 80%;
+    text-shadow: none !important;
+    font-size: 0.8rem;
+}
+
 .Card:hover {
-    transform: scale(2.2); 
-  }
+    transform: scale(2.2);
+}
 
-  .Cardboard{
+.Board-enemie > .Card,
+.Board-me > .Card {
+    width: 12% !important;
+    height: 80% !important;
+    margin-right: 1%;
+}
+
+.Cardboard {
     background-image: url("../Images/FrontCard.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 10%;
     height: 60%;
     border-radius: 5%;
-  }
+}
 
 .Cardboard:hover {
-    transform: scale(2.2); 
-  }
+    transform: scale(2.2);
+}
 
-  .pioche{
+.pioche {
     background-image: url("../Images/BackCard.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -118,44 +239,52 @@ https://static.wikia.nocookie.net/bokunoheroacademia/images/6/61/Festival_deport
     font-size: 3rem;
     display: flex;
     justify-content: center;
+    border: solid 1px black;
+    border-radius: 5%;
+}
 
-  }
+.nbpioche {
+    text-align: center;
+    vertical-align: middle;
+}
+.Power {
+    margin-top: 20%;
+    margin-left: 15%;
+}
 
-  .nbpioche{
-      text-align: center;
-      vertical-align: middle;
-
-  }
-  .Power{
-      margin-top: 20%;
-      margin-left: 15%;
-  }
-
-  .Hero{
-    background-image: url("../Images/FrontCardHero.png");
+.Hero {
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    width: 50%;
-    height: 100%;
-    margin-left: 20%;
+    width: 90%;
+    height: 90%;
     border-radius: 5%;
-  }
-  .Hero:hover {
-    transform: scale(1.2); 
+    margin: auto;
+}
 
-  }
+.uid {
+    display: none;
+}
 
+.Hero:hover {
+    transform: scale(1.2);
+}
 
-  .CartEnemie{
+.Hero > div {
+    margin: 0px auto !important;
+    width: 100% !important;
+    height: 80% !important;
+    border: 2px solid black;
+}
+
+.CartEnemie {
     background-image: url("../Images/BackCard.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 20%;
     height: 60%;
-  }
+}
 
-  #SelectedHero{
-
+#SelectedHero {
     background-image: url("../Images/heroes/All_Might_Anime_Portrait.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -163,9 +292,9 @@ https://static.wikia.nocookie.net/bokunoheroacademia/images/6/61/Festival_deport
     height: 50%;
     margin-left: 5%;
     border-radius: 30px;
-  }
+}
 
-  #EnemieHero{
+#EnemieHero {
     background-image: url("../Images/heroes/All_For_One_Anime_Portrait.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -173,26 +302,27 @@ https://static.wikia.nocookie.net/bokunoheroacademia/images/6/61/Festival_deport
     height: 50%;
     margin-left: 5%;
     border-radius: 30px;
-  }
+}
 
-  .EnergieB{
+.EnergieB {
     background-image: url("../Images/Energie.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 35%;
     height: 50%;
-  }
-.top-right > div , .bottom-right > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+.top-right > div,
+.bottom-right > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-  .VieB{
+.VieB {
     background-image: url("../Images/Heart.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 30%;
     height: 50%;
     margin-left: 10%;
-  }
+}

@@ -27,12 +27,8 @@ require_once("Partial/header.php");
   </div>
 
   </div>
-  <div class="Card-left" id = "player-left">
-
-    </div>
-  <div class="Card-right" id = "player-right">
-
-  </div>
+  <div class="Card-left" id = "player-left"></div>
+  <div class="Card-right" id = "player-right"></div>
   <div class="Card-Left-enemie" id ="opponent-left">
 
   </div>
@@ -41,11 +37,11 @@ require_once("Partial/header.php");
 
   </div>
   <div class="Board-enemie" id= "board-enemie">
-  
+
 
   </div>
   <div class="Board-me"id = "board-player">
-    
+
   </div>
   <div class="Button-left">
     <div id = timer_area>
@@ -54,11 +50,11 @@ require_once("Partial/header.php");
     <button id = "Turn">Next turn</button>
     <button id = "hpower">Active power</button>
     <button id = "giveup">Give up</button>
-    
+
   </div>
   <div class="Button-right">
-    
-    <iframe style="width:700px;height:240px;" onload="applyStyles(this)"  
+
+    <iframe onload="applyStyles(this)"
         src="https://magix.apps-de-cours.com/server/#/chat/<?php echo $_SESSION["key"] ?>">
     </iframe>
   </div>

@@ -3,4 +3,8 @@
 @font-face {
     font-family: heroes;
     src: url(../Font/HEROES.ttf);
-  }
+}
+
+body {
+    overflow: hidden;
+}
