@@ -25,23 +25,19 @@ require_once("Partial/header.php");
     <div id = "SelectedHero"></div>
 
   </div>
-
+ 
   </div>
   <div class="Card-left" id = "player-left"></div>
   <div class="Card-right" id = "player-right"></div>
-  <div class="Card-Left-enemie" id ="opponent-left">
 
+  <div class="Card-Left-enemie" id ="opponent-left">
   </div>
   <div class="Card-Right-enemie"id = "opponent-right">
-
-
   </div>
+
   <div class="Board-enemie" id= "board-enemie">
-
-
   </div>
   <div class="Board-me"id = "board-player">
-
   </div>
   <div class="Button-left">
     <div id = timer_area>
@@ -57,6 +53,15 @@ require_once("Partial/header.php");
     <iframe onload="applyStyles(this)"
         src="https://magix.apps-de-cours.com/server/#/chat/<?php echo $_SESSION["key"] ?>">
     </iframe>
+
+    <div class = "info">
+   
+    <span id = "Enemie_name"></span> vs <span id = "Player_name"><?= $data["name"] ?></span>
+
+ 
+    </div>
+
+
   </div>
   <div class="Bottom-left">
       <div class = "pioche">

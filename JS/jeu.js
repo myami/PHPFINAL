@@ -3,7 +3,7 @@ const applyStyles = (iframe) => {
         fontColor: "white",
         fontGoogleName: "Gruppo",
         height: "100%",
-        fontSize: "20px",
+        fontSize: "10px",
         inputBackgroundColor: "rgba(0, 0, 0, 0.8)",
     };
 
@@ -60,6 +60,7 @@ window.addEventListener("load", () => {
     document.querySelector("#giveup").addEventListener("click", giveup);
 
     document.querySelector("#EnemieHero").addEventListener("click", attack);
+
 });
 
 function turn() {
@@ -72,9 +73,7 @@ function giveup() {
     button("surrender");
 }
 
-function chat() {
-    // fait apparaitre et disparaitre le chat
-}
+
 
 const button = (type) => {
     let formData = new FormData();
@@ -125,6 +124,12 @@ function DisplayData(data) {
     UpdateBoardEnemie(data);
 
     document.querySelector("#timer").textContent = data["remainingTurnTime"];
+
+    document.querySelector("#Enemie_name").textContent = data["opponent"]["username"];
+
+    document.querySelector("#SelectedHero").style.backgroundImage = "url(" + herobackground(data["heroClass"]) + ")";
+    document.querySelector("#EnemieHero").style.backgroundImage = "url(" + herobackground(data["opponent"]["heroClass"]) + ")";
+    
 }
 
 function UpdatePlayerStats(data) {
@@ -144,6 +149,7 @@ function UpdateEnemieStats(data) {
     document.querySelector("#VieEnemie").textContent = data["opponent"]["hp"];
     document.querySelector("#energieEnemie").textContent = data["opponent"]["mp"];
     document.querySelector("#nbcartenemie").textContent = data["opponent"]["remainingCardsCount"];
+    
 }
 
 function UpdateBoardPlayer(data) {
@@ -177,6 +183,7 @@ function UpdateCardEnemie(data) {
     }
     var cartenemie = document.createElement("div");
     cartenemie.className = "CartEnemie";
+    
     if (data["opponent"]["handSize"] < 5) {
         for (let i = 0; i < data["opponent"]["handSize"]; i++) {
             leftenemie.appendChild(cartenemie);
@@ -192,6 +199,7 @@ function UpdateCardEnemie(data) {
 }
 
 function UpdateCardPlayer(data) {
+
     let leftplayer = document.querySelector("#player-left");
     let rightplayer = document.querySelector("#player-right");
     while (leftplayer.firstChild) {
@@ -211,7 +219,6 @@ function UpdateCardPlayer(data) {
         }
         for (let i = 5; i < data["hand"].length; i++) {
             rightplayer.appendChild(addplayerhandcart(data["hand"][i]));
-            console.log(data["hand"][i]);
         }
     }
 }
@@ -225,6 +232,7 @@ function addplayerhandcart(data) {
 function AddCard(data) {
     var carte = document.createElement("div");
     carte.className = "Card";
+    carte.style.backgroundImage = "url(" + cardbackground(data) + ")";
     var div1 = document.createElement("div");
 
     var cost = document.createElement("span");
@@ -246,13 +254,47 @@ function AddCard(data) {
     var uid = document.createElement("span");
     uid.textContent = data["uid"];
     uid.classList.add("uid");
+   
 
     carte.appendChild(div1);
     carte.appendChild(mechanic);
     carte.appendChild(uid);
-
-    return carte;
+    
+    return checkmechanic(data,carte);;
 }
+
+
+function checkmechanic(data,carte){
+    /*let mechanics = data["mechanics"].split(",");
+    mechanic.forEach(element => {
+       switch(element){
+           case "Taunt":
+                carte.style.bordercolor = "RED";
+                break;
+       }*/
+       return carte;
+    
+
+}
+
+function cardbackground(data){
+    let img;
+    if (data.id < 99){
+        img = "./Images/Cart/" +data.id + ".png";
+    }
+    else {
+        img = "./Images/Cart/29.png";
+    }
+    return img
+}
+
+function herobackground(herotype){
+    let img = "./Images/heroes/" + herotype + ".png";
+   
+    return img
+}
+
+
 
 let attaquant;
 
@@ -270,7 +312,6 @@ function AddCartBoardEnemie(data) {
 
 function play() {
     let target = event.currentTarget;
-    console.log(target.querySelector(".uid").textContent);
     carte("play", target.querySelector(".uid").textContent);
 }
 

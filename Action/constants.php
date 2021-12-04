@@ -1,5 +1,5 @@
 <?php
 
-    define("DB_HOST", "mysql:host=webmysql.notes-de-cours.com:13306;dbname=smarthome");
-    define("DB_USER", "smarthomeuser");
-    define("DB_PASS", "smhFTW!6l");
+    define("DB_HOST", "pgsql:host=webpgsql.notes-de-cours.com;dbname=db_e1975251");
+    define("DB_USER", "e1975251");
+    define("DB_PASS", "e1975251");

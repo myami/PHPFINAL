@@ -168,7 +168,7 @@ span {
 }
 
 .Card {
-    background-image: url("../Images/heroes/Eraser_Head_Anime_Portrait.png");
+   /* background-image: url("../Images/heroes/Eraser_Head_Anime_Portrait.png");*/
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 20%;
@@ -195,14 +195,16 @@ span {
 .Card > div > div > span {
     border: solid 2px black;
     aspect-ratio: 1/1;
-    text-shadow: none !important;
+
     text-align: center;
 }
 
 .Card > span {
     height: 80%;
-    text-shadow: none !important;
+    
     font-size: 0.8rem;
+
+    
 }
 
 .Card:hover {

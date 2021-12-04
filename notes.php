@@ -13,7 +13,7 @@ require_once("Partial/header.php");
 <div style="position:relative;">
 			<form action="" method="post">
 				<div>
-					Qu'avez-vous en tête : <input type="text" name="text" value="" />
+					Une nouvelle analyse de carte : <input type="text" name="text" value="" />
 					<input type="submit" value="Ajouter"/>
 				</div>
 				
@@ -24,7 +24,7 @@ require_once("Partial/header.php");
 					if (sizeof($data["memos"]) > 0) {
 						foreach ($data["memos"] as $post) {
 							?>
-							<div class="post-it"><?= $post["text"] ?> </div>
+							<div class="post-it"><span class = "date"><?= $post["dateposte"] ?></span> <span class ="contenu"><?= $post["contenu"] ?></span> <button> supprimer</button> </div>
 							<?php
 						}
 					}	

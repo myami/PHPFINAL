@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+require_once("Action/constants.php");
 abstract class CommonAction
 {
     protected static $VISIBILITY_ADMIN = 3;

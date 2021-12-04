@@ -1,6 +1,6 @@
 <?php
 	require_once("action/CommonAction.php");
-
+    require_once("action/DAO/ContentDAO.php");
 class JeuAction extends CommonAction
 {
 
@@ -11,9 +11,10 @@ class JeuAction extends CommonAction
 
     protected function executeAction() {
         $Player_State = false;
+        $name = ContentDAO::getIndexText();
         
 
-        return [];
+        return compact("name");
     }
 }
 

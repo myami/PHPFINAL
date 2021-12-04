@@ -1,6 +1,8 @@
 <?php
 
 require_once("action/CommonAction.php");
+require_once("action/DAO/ContentDAO.php");
+
 class NotesAction extends CommonAction
 {
 
@@ -10,17 +12,14 @@ class NotesAction extends CommonAction
     }
 
     protected function executeAction() {
+
+
         if (isset($_POST["text"])) {
-			$post = array();
-			$post["text"] = $_POST["text"];
-			$_SESSION["posts"][] = $post;
+			ContentDAO::WriteNote($_POST["text"]);
 		}
 			
-		if (!isset($_SESSION["posts"])) {
-			$_SESSION["posts"] = array();
-		}
 		
-		$memos = $_SESSION["posts"];
+		$memos = ContentDAO::GetAllNotes();
 		
 		return compact("memos");
         

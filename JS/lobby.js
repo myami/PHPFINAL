@@ -11,9 +11,7 @@ const applyStyles = iframe => {
 }
 
 const lobby = (gametype) => {
-	if(gametype == "note"){
-		window.location.href = "./notes.php";
-	}
+
 	let formData = new FormData();
 	formData.append("gametype", gametype);
 
