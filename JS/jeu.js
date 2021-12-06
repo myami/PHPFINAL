@@ -231,7 +231,7 @@ function addplayerhandcart(data) {
 
 function AddCard(data) {
     var carte = document.createElement("div");
-    carte.className = "Card";
+    carte.classList.add("Card");
     carte.style.backgroundImage = "url(" + cardbackground(data) + ")";
     var div1 = document.createElement("div");
 
@@ -254,6 +254,11 @@ function AddCard(data) {
     var uid = document.createElement("span");
     uid.textContent = data["uid"];
     uid.classList.add("uid");
+
+    if(data["state"] == "SLEEP"){
+        carte.classList.add("sleep");
+        console.log("sleep");
+    }
    
 
     carte.appendChild(div1);
@@ -265,16 +270,18 @@ function AddCard(data) {
 
 
 function checkmechanic(data,carte){
-    /*let mechanics = data["mechanics"].split(",");
-    mechanic.forEach(element => {
-       switch(element){
-           case "Taunt":
-                carte.style.bordercolor = "RED";
-                break;
-       }*/
+    let mechanics = data["mechanics"];
+    mechanics.forEach(element => {
+        if (element == "Taunt"){
+            carte.classList.add("taunt");
+        }
+        else if (element == "Stealth"){
+            carte.classList.add("stealth");
+        }
+    });
+   
        return carte;
     
-
 }
 
 function cardbackground(data){

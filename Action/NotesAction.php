@@ -17,6 +17,10 @@ class NotesAction extends CommonAction
         if (isset($_POST["text"])) {
 			ContentDAO::WriteNote($_POST["text"]);
 		}
+
+        if(!empty($_POST["id"])){
+            ContentDAO::DeleteNote($_POST["id"]);
+        }
 			
 		
 		$memos = ContentDAO::GetAllNotes();

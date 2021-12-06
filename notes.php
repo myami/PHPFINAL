@@ -24,7 +24,7 @@ require_once("Partial/header.php");
 					if (sizeof($data["memos"]) > 0) {
 						foreach ($data["memos"] as $post) {
 							?>
-							<div class="post-it"><span class = "date"><?= $post["dateposte"] ?></span> <span class ="contenu"><?= $post["contenu"] ?></span> <button> supprimer</button> </div>
+							<div class="post-it"><span class = "date"><?= $post["dateposte"] ?></span> <span class ="contenu"><?= $post["contenu"] ?></span> <form action="" method="post"> <input type="hidden" value = "<?= $post["noteid"] ?>" name = "id"><button> supprimer</button></form>  </div>
 							<?php
 						}
 					}	

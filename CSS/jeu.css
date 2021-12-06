@@ -207,6 +207,18 @@ span {
     
 }
 
+.sleep {
+    filter: grayscale(100%);
+}
+
+.taunt{
+    border: 1px red solid;
+}
+
+.stealth{
+    border: 1px blue solid;
+}
+
 .Card:hover {
     transform: scale(2.2);
 }

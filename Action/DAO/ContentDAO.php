@@ -37,7 +37,6 @@
         public static function DeleteNote($id){
             $connection = Connection::getConnection();
             $result = null;
-
             $statement = $connection->prepare("DELETE FROM notes WHERE noteid = ?");
             $statement->bindParam(1, $id);
             $statement->setFetchMode(PDO::FETCH_ASSOC); 
